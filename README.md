@@ -1,3 +1,3 @@
 # Assignment
 
-# home.java is the main Method for all solutions
+# home.java is the main class for all solutions
