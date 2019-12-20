@@ -10,39 +10,33 @@ import java.io.Serializable;
 
 import java.util.*;
 
-
 public class displayUser {
-	
 	public static int rollasc;
-	public ArrayList<user> readFromFile()
-	{
+	
+	public ArrayList<user> readFromFile() {
+		
 		ArrayList<user> object1=null;
 		String filename="userdata.txt";
 		ArrayList<user> us1 = new ArrayList<user>();
 		
-		
-		try
-	    {    
+		try {    
 	        // Reading the object from a file 
-	        FileInputStream file = new FileInputStream(filename); 
-	        ObjectInputStream in = new ObjectInputStream(file); 
-	        
+	       FileInputStream file = new FileInputStream(filename); 
+	       ObjectInputStream in = new ObjectInputStream(file); 
 	       
 	       object1=(ArrayList<user>) in.readObject();
-	    	   us1.addAll(object1);     
-	    } 
-	     catch(EOFException e)
-		{
+	       us1.addAll(object1);     
+	    }catch(EOFException e) {
 	    	 System.out.println("EOF here");
-		}
-	    catch(Exception ex) 
-	    { 
+		}catch(Exception ex) {
 	        System.out.println("IOException is caught" ); 
-	        ex.printStackTrace();
-	    } 
+	    }
 		
 		nameCompare namec = new nameCompare(1);
-		Collections.sort(us1,namec);
+		
+		if(!us1.isEmpty())
+			Collections.sort(us1,namec);
+		
 		return us1;
 
 	}
@@ -87,13 +81,15 @@ public class displayUser {
 			
 		}
 		
-		System.out.println("----------------------------------------------------------------------------------");
-		
-		System.out.println("----------------------------------------------------------------------------------");
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Name\t\t\tRoll Number\t\tAge\t\t\tAddress\t\t\tCourses");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
 		
 		for( user u1 : addUser.users)
 		{
-			System.out.println(u1.toString());
+			System.out.println(u1.getName()+"\t\t\t"+ u1.getRollno()+"\t\t\t"+ u1.getAge()+"\t\t\t"+ u1.getAddress()+"\t\t"+u1.getCourse().toString());
+	        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+
 		}
 		
 		

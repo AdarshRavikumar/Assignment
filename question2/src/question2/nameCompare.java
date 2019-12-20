@@ -3,37 +3,32 @@ package question2;
 import java.util.Comparator;
 
 public class nameCompare implements Comparator<user>{
-	
+	/** 
+	 *  asc=1 then it is ascending 
+	 *  if asc= 2 then descending 
+	 */
 	int asc;
-	// if asc=1 then it is ascending , if its 2 then descending
+	int result;
 	
-	public nameCompare(int asc)
-	{
+	public nameCompare(int asc) {
 		this.asc=asc;
 	}
-	int result;
+	
 	@Override
 	public int compare(user o1, user o2) {
 		
-		if(o1.name.compareTo(o2.name)>0)
-		{
+		if(o1.getName().compareTo(o2.getName())>0) {
 			result= 1;
 		}
-		else if(o1.name.compareTo(o2.name)<0)
-		{
+		else if(o1.getName().compareTo(o2.getName())<0) {
 			result= -1;
 		}
-		else
-		{
-			
-			return o1.rollno - o2.rollno;
+		else {
+			return o1.getRollno() - o2.getRollno();
 		}
-		
-		if(asc==2)
-		{
+		if(asc==2) {
 			result*=-1;
 		}
-		
 		return result;
 	}
 

@@ -9,7 +9,7 @@ public interface operations {
 	public ArrayList<Integer> getParents(int id);
 	
 	public ArrayList<Integer> getChildren(int id);
-
+	
 	public ArrayList<Integer> getAncestors(int id);
 	
 	public ArrayList<Integer> getDescendents(int id);
@@ -19,7 +19,4 @@ public interface operations {
 	public void deleteDependency(int id);
 	
 	public void deleteDependency(int parentId, int childId);
-	
-	
-	
 }

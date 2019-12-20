@@ -8,21 +8,15 @@ import java.util.Set;
 
 public class saveDetails {
 	
-	public void save()
-	{
-		
+	public void save() {
 		try {
 			FileOutputStream file = new FileOutputStream("userdata.txt");
 			ObjectOutputStream out = new ObjectOutputStream(file);
-
 			out.writeObject((ArrayList<user>) addUser.users);
-			
 		} catch (IOException e) {
-			
-			e.printStackTrace();
+			System.out.println("IO Exception Caught ");
 		}
-		
-		System.out.println("Added to disk");
+		System.out.println("Saved to disk");
 	}
 
 }

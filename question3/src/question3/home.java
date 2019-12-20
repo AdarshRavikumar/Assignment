@@ -4,12 +4,19 @@ import java.util.ArrayList;
 
 public class home {
 
+	public void Display(ArrayList<Integer> list)
+	{
+		for(int x : list)
+		{
+			System.out.print(x+ " ");
+		}
+		System.out.println();
+	}
 	public static void main(String[] args) {
 		
 		int noOfNodes=5;
-		
 		dependencyGraph graph = new dependencyGraph(noOfNodes);
-		
+		home homeObject = new home();
 		
 		/**
 		 * Following Methods can be used based on defination to perform the operations
@@ -30,13 +37,9 @@ public class home {
 				public void deleteDependency(int parentId, int childId);
 		 */
 		
+		// Following is an example to use the methods
 		
-		
-		// Following is an example to use the methods, Here user input isn't taken
-		
-		/**
-		 * 
-		 * Node n1 = new Node(0,"A");
+		Node n1 = new Node(0,"A");
 		Node n2 = new Node(1,"B");
 		Node n3 = new Node(2,"C");
 		Node n4 = new Node(3,"D");
@@ -54,88 +57,50 @@ public class home {
 		graph.addDependency(1,4);
 		
 		
-		ArrayList<Integer> parents = graph.getParents(3);
+		System.out.println("The Graph using List Representation");
+		graph.displayGraph(graph.depGraph);
 		
+		// Using getParents(int id)
+		
+		System.out.println("-----------------------------------------");
 		System.out.println("Parents of Node ");
-		for(int x : parents)
-		{
-			System.out.print(x+ " ");
-		}
-		
+		ArrayList<Integer> parents = graph.getParents(2);
+		homeObject.Display(parents);
+
+		// Using getAncestors(int id)
+		System.out.println("-----------------------------------------");
 		System.out.println("Ancestors of Node ");
-		ArrayList<Integer> Ancestors = graph.getAncestors(3);
-		for(int x : Ancestors)
-		{
-			System.out.print(x+ " ");
-		}
-		
-		System.out.println();
+		ArrayList<Integer> Ancestors = graph.getAncestors(2);
+		homeObject.Display(Ancestors);
 		
 		graph.addDependency(1,2);
 		
+		// using getChildren(int id)
+		System.out.println("-----------------------------------------");
 		System.out.println("Immediate Children");
 		ArrayList<Integer> children = graph.getChildren(1);
-		for(int x : children)
-		{
-			System.out.print(x+ " ");
-		}
-		
-		
+		homeObject.Display(children);
+
+		// Using getDescendants(int id)
+		System.out.println("-----------------------------------------");
 		System.out.println("Descendants");
 		ArrayList<Integer> descendants = graph.getDescendents(1);
-		for(int x : descendants)
-		{
-			System.out.print(x+ " ");
-		}
-		
-		System.out.println();
-		
-		
-		// Before Deleting
-		for(int i=0;i<graph.depGraph.length;i++)
-		{
-			for(int j=0;j<graph.depGraph[i].size();j++)
-			{
-				System.out.print(graph.depGraph[i].get(j));
-				
-			}
-			System.out.println();
-		}
-		
-		//After deleting node 3
-		
+		homeObject.Display(descendants);
+
+
+		// Using deleteDependency(int id)
 		graph.deleteDependency(4);
-		System.out.println("After deleting");
 		
-		for(int i=0;i<graph.depGraph.length;i++)
-		{
-			for(int j=0;j<graph.depGraph[i].size();j++)
-			{
-				System.out.print(graph.depGraph[i].get(j));
-				
-			}
-			System.out.println();
-		}
+		// Using deleteDependency(int parent, int children)
+		graph.deleteDependency(1,2);
 		
+		System.out.println("-----------------------------------------");
+		System.out.println("The Final Graph after the previous Delete Operations");
+		graph.displayGraph(graph.depGraph);
+		
+
 	
-		// Delete dependency given parent and Child Node
-		
-		//System.out.println("Deleting child and parent dependency");
-		//graph.deleteDependency(1,2);
-		
-		for(int i=0;i<graph.depGraph.length;i++)
-		{
-			for(int j=0;j<graph.depGraph[i].size();j++)
-			{
-				System.out.print(graph.depGraph[i].get(j));
-				
-			}
-			System.out.println();
-		}
-		
-	
-		 */
-		
+
 		
 	}
 
