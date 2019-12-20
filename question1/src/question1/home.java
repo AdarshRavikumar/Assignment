@@ -81,11 +81,20 @@ public class home {
 			asn.Assign(obj, arr, obj_count++);	
 	    }
 		
-		// Printing objects
-		for(int j=0;j<obj_count;j++) {
-			if(obj[j]!=null)
-				System.out.println(obj[j]);
-		}
+	     System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+	     System.out.println("Name"+"              "+"Quantity"+"       "+"Price"+"         "+"Type");
+	     System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+			
+	      
+	     for(int i=0;i<obj_count;i++)
+	     {
+		     if(obj[i]!=null)
+		     {
+	    	  	System.out.println(obj[i].getName()+"               "+obj[i].getQuantity()+"          "+obj[i].getPrice()+"          "+obj[i].getType());
+		        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+		     }
+	     }
+	      
 		
 		
 
