@@ -75,7 +75,7 @@ public class home {
 			if(ch.equals("N") || ch.equals("n"))
 				break;
 			
-			System.out.println("Enter Following Details Name, Price(The value should be in decimal ex: 100.0 or 123.4 etc), Quant, type[raw,manufactured,imported]");
+			System.out.println("Enter -name<Item Name> -price<Item Price> -quant<Item Quantity> -type<Item type> ");
 			String inp = sc.nextLine();
 			String arr[]=inp.split(" ");
 			asn.Assign(obj, arr, obj_count++);	
