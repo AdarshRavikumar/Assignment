@@ -17,13 +17,14 @@ public class checkCycle {
 		ancestors[id1]=true;
 		Iterator<Integer> i = depGraph[id1].listIterator(); 
 		
-        while (i.hasNext()) {
-            int n = i.next();
-            if (checkCycleUtils(depGraph,n,id2,visited,ancestors))
+        	while (i.hasNext()) 
+		{
+            	    int n = i.next();
+            	    if (checkCycleUtils(depGraph,n,id2,visited,ancestors))
             		return true;
-        } 
-        ancestors[id1]=false;
-        return false;
+        	} 
+        	ancestors[id1]=false;
+       		return false;
 	}
 
 	public boolean checkCycles(ArrayList<Integer>depGraph[], int id1, int id2, int vertices) {
