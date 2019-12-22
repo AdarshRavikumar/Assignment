@@ -39,20 +39,19 @@ public class item {
 	}
 
 	public float calculateTax(float price, String type) {
-		
 		float tax =0.0f;
 		
 		if("raw".equals(type)) {
-			raw rawItem= new raw();
-			tax=rawItem.calculateTax(price);
+		    raw rawItem= new raw();
+		    tax=rawItem.calculateTax(price);
 		}
 		else if("manufactured".equals(type)) {
-				manufactured manufacturedItem = new manufactured();
-				tax=manufacturedItem.calculateTax(price);
+		    manufactured manufacturedItem = new manufactured();
+		    tax=manufacturedItem.calculateTax(price);
 		}
 		else if("imported".equals(type)) {
-				imported importedItem = new imported();
-				tax=importedItem.calculateTax(price);
+		    imported importedItem = new imported();
+		    tax=importedItem.calculateTax(price);
 		}
 		return tax;
 	}
