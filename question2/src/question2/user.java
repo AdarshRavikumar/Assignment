@@ -1,5 +1,4 @@
 package question2;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,21 +17,17 @@ public class user implements Serializable{
 		this.course = course;
 	}
 
-	
 	public String getName() {
 		return name;
 	}
-
 
 	public int getAge() {
 		return age;
 	}
 
-
 	public int getRollno() {
 		return rollno;
 	}
-
 
 	public String getAddress() {
 		return address;
@@ -41,7 +36,6 @@ public class user implements Serializable{
 	public ArrayList<String> getCourse() {
 		return course;
 	}
-
 
 	@Override
 	public String toString() {
