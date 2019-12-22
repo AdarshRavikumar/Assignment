@@ -11,7 +11,6 @@ public class Node {
 		
 		this.id = id;
 		this.name = name;
-	
 	}
 
 	public int getId() {
@@ -21,10 +20,5 @@ public class Node {
 	public String getName() {
 		return name;
 	}
-
-
-
-	
-
 	
 }
