@@ -51,7 +51,8 @@ public class sqlConnection {
         } catch (SQLException e) {  
             System.out.println("SQL Exception in Creating Table");  
         }  
-    }
+		
+      }
 	
 	public void insert(String name, int quantity, float price, String type) { 
 		
