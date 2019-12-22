@@ -24,6 +24,7 @@ public class nameCompare implements Comparator<user>{
 			result= -1;
 		}
 		else {
+			//if both names are same then arrange based on their roll numbers
 			return o1.getRollno() - o2.getRollno();
 		}
 		if(asc==2) {
