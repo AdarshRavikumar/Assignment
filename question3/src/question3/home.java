@@ -98,10 +98,5 @@ public class home {
 		System.out.println("The Final Graph after the previous Delete Operations");
 		graph.displayGraph(graph.depGraph);
 		
-
-	
-
-		
 	}
-
 }
