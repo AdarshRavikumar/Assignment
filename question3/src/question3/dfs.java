@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class dfs {
 
 
-	public void DFSUtil(int v,boolean visited[],ArrayList<Integer>[] depGraph,ArrayList<Integer> resultofDFS,int level) 
+    public void DFSUtil(int v,boolean visited[],ArrayList<Integer>[] depGraph,ArrayList<Integer> resultofDFS,int level) 
     { 
         // Mark the current node as visited and print it 
         visited[v] = true; 
